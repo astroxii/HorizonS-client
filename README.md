@@ -7,5 +7,9 @@
 This is the client-side project for **HorizonS**, a forum and social network focused on Gaming and PCs.
 
 ## Features
+-
 
 ## Future Additions
+-
+
+**astroxii @ 2026**
