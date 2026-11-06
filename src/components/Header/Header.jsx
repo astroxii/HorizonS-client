@@ -1,6 +1,6 @@
-import { Link, NavLink } from "react-router"
+import { Link, NavLink } from "react-router";
 
-function Header()
+function Header({user})
 {
   return (
     <header className="inline-flex justify-center content-center bg-white dark:bg-black py-5 w-full shadow-md">
@@ -20,12 +20,21 @@ function Header()
             </ul>
         </nav>
         <div className="inline-flex justify-center content-center gap-5 ml-auto mx-5">
-            <Link className="my-auto text-white text-lg" to="/login">Login</Link>
-            <span className="my-auto text-zinc-400 select-none">OR</span>
-            <Link className="my-auto text-purple-400 text-lg" to="/register">Register</Link>
+            {
+                user ?
+                <>
+                
+                </>
+                :
+                <>
+                    <Link className="my-auto text-white text-lg" to="/login">Login</Link>
+                    <span className="my-auto text-zinc-400 select-none">OR</span>
+                    <Link className="my-auto text-purple-400 text-lg" to="/register">Register</Link>
+                </>
+            }
         </div>
     </header>
-  )
+  );
 }
 
-export default Header
+export default Header;
