@@ -23,7 +23,10 @@ function Header({user})
             {
                 user ?
                 <>
-                
+                    <button>
+                        <img alt="User icon" src={`${user.avatarURL || ""}`} />
+                        <p>{user.username}</p>
+                    </button>
                 </>
                 :
                 <>

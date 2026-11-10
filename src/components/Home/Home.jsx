@@ -3,7 +3,7 @@ import onSubmit from "./onSubmit";
 
 function Home({user})
 {
-  const [searchHistory, setSearchHistory] = useState(JSON.parse(localStorage.getItem("searchHistory")) || null);
+  const [searchHistory, setSearchHistory] = useState(JSON.parse(localStorage.getItem("searchHistory")) || []);
   const [search, setSearch] = useState(null);
 
   return (
@@ -12,9 +12,16 @@ function Home({user})
           <form onSubmit={(e) => onSubmit(e, search, setSearch)}>
             <label>
               <input className="text-zinc-300 border-2 border-zinc-300 rounded-md p-1 outline-none" type="text" name="search" placeholder="Search" />
-              <div>
-                
-              </div>
+              <ul>
+                {
+                  searchHistory.map((s) =>
+                  {
+                    return ( 
+                      <li>{s}</li>
+                    );
+                  })
+                }
+              </ul>
             </label>
           </form>
         </div>
