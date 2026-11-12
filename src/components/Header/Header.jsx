@@ -27,15 +27,15 @@ function Header({user})
                         <img className={`w-7.5 h-7.5 rounded-full ${user.avatarURL ? "" : "dark:invert"}`} alt="User icon" src={`${user.avatarURL || "/images/genericUserIcon.png"}`} />
                         <p className="text-black dark:text-zinc-300 m-auto"><span className="text-zinc-400">@</span>{user.username}</p>
                     </button>
-                    <button className="cursor-pointer rounded-md px-1"  title="Logout">
+                    <button className="cursor-pointer rounded-md px-1" title="Logout">
                         <img className="w-7.5 h-7.5 dark:invert" alt="Logout icon" src="/images/logoutIcon.png" />
                     </button>
                 </>
                 :
                 <>
-                    <Link className="my-auto text-purple-400 text-lg" to="/login">Login</Link>
+                    <Link className="my-auto text-purple-400 text-lg hover:text-purple-500 ease-in-out duration-300" to="/login">Login</Link>
                     <span className="my-auto text-zinc-400 select-none">OR</span>
-                    <Link className="my-auto text-black dark:text-white text-lg" to="/register">Register</Link>
+                    <Link className="my-auto text-black dark:text-white text-lg hover:text-zinc-400 ease-in-out duration-300" to="/register">Register</Link>
                 </>
             }
         </div>

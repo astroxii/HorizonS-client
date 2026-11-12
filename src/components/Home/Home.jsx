@@ -1,13 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import onSubmit from "./onSubmit";
 
-function Home({user})
+function Home({user, setTitle})
 {
+  useEffect(() => {setTitle("HorizonS | Home");});
+
   const [searchHistory, setSearchHistory] = useState(JSON.parse(localStorage.getItem("searchHistory")) || []);
   const [search, setSearch] = useState(null);
 
   return (
-    <main className="inline-flex bg-white dark:bg-black w-screen min-h-screen">
+    <main className="inline-flex bg-white dark:bg-black w-full min-h-screen">
         <div className="w-full h-fit inline-flex justify-center content-center mx-auto">
           <form onSubmit={(e) => onSubmit(e, search, setSearch)}>
             <label>
